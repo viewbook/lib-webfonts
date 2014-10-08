@@ -6,7 +6,7 @@ var fontData = [
 	},
 	{
 		font: 'Lato:400,700,400italic,700italic:latin', 
-		name:, 'font_family_lato', 
+		name: 'font_family_lato', 
 		family: 'Lato'
 	},
 	{
