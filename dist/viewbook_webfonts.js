@@ -1,4 +1,6 @@
-var families = ['Dosis:400,700:latin', 
+// Webfont family listing
+var families = [
+	'Dosis:400,700:latin', 
 	'Lato:400,700,400italic,700italic:latin', 
 	'Arvo:400,700,400italic,700italic:latin', 
 	'PT+Serif:400,700,400italic,700italic:latin', 
@@ -11,16 +13,22 @@ var families = ['Dosis:400,700:latin',
 	'Old+Standard+TT:400,700,400italic:latin'
 ];
 
-var fonts = parseFamilies(families);
-var font, split, id, name, classID;
-var textTypes = [{prefix: '', selector: ''}, {prefix: 'title_', selector: ' #vb_title'}, {prefix: 'menu_', selector: ' #vb_menu'}];
-var fontStyles = [];
-var head = document.head || document.getElementsByTagName('head')[0];
-var cssText;
-var style = document.createElement('style');
+var viewbookFonts = [], font, split, id, name, styleID;
 
-window.webfonts = fonts;
+for(var a = 0; a < families.length; ++a){
+	font = families[a];
+	split = font.split(':');
+	id = split[0];
+	name = id.replace(/\+/g, ' ');
+	styleID = id.toLowerCase().replace(/\+/g, '-');
 
+	viewbookFonts.push({
+		name: name,
+		styleID: styleID
+	});
+}
+
+// Default google webfont embed code (Javascript version)
 WebFontConfig = {
   google: { families:  families}
 };
@@ -35,9 +43,18 @@ WebFontConfig = {
 })();
 
 
-// generate V2 page style for the corresponding webfonts
-for(var a = 0; a < fonts.length; ++a){
-	font = fonts[a];
+// Generate V2 page style for the corresponding webfonts
+var fontStyles = [], cssText;
+var style = document.createElement('style');
+var head = document.head || document.getElementsByTagName('head')[0];
+var textTypes = [
+	{prefix: '', selector: ''}, 
+	{prefix: 'title_', selector: ' #vb_title'}, 
+	{prefix: 'menu_', selector: ' #vb_menu'}
+];
+
+for(var a = 0; a < viewbookFonts.length; ++a){
+	font = viewbookFonts[a];
 	for(var b = 0; b < textTypes.length; ++b){
 		fontStyles.push('.' + textTypes[b].prefix + 'font_family_' + font.styleID + textTypes[b].selector + '{font-family: "' + font.name + '";}');
 	}	  	
@@ -46,6 +63,7 @@ for(var a = 0; a < fonts.length; ++a){
 cssText = fontStyles.join(' ');
 
 style.type = 'text/css';
+
 if (style.styleSheet){
   style.styleSheet.cssText = cssText;
 } else {
@@ -53,24 +71,3 @@ if (style.styleSheet){
 }
 
 head.appendChild(style);
-
-function parseFamilies(families){
-	var font, fonts = [], split, name, id;
-
-	for(var a = 0; a < families.length; ++a){
-		font = families[a];
-		split = font.split(':');
-		id = split[0];
-		name = id.replace(/\+/g, ' ');
-		styleID = id.toLowerCase().replace(/\+/g, '-');
-
-		fonts.push({
-			id: id,
-			name: name,
-			styleID: styleID,
-			font: font
-		});
-	}
-
-	return fonts;
-}
