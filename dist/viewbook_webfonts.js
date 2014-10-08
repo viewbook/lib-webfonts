@@ -44,7 +44,7 @@ WebFontConfig = {
 
 
 // Generate V2 page style for the corresponding webfonts
-var fontStyles = [], cssText;
+var fontStyles = [], fontTextStyles, cssText;
 var style = document.createElement('style');
 var head = document.head || document.getElementsByTagName('head')[0];
 var textTypes = [
@@ -55,9 +55,13 @@ var textTypes = [
 
 for(var a = 0; a < viewbookFonts.length; ++a){
 	font = viewbookFonts[a];
+	fontTextStyles = [];
+
 	for(var b = 0; b < textTypes.length; ++b){
-		fontStyles.push('.' + textTypes[b].prefix + 'font_family_' + font.styleID + textTypes[b].selector + '{font-family: "' + font.name + '";}');
-	}	  	
+		fontTextStyles.push('.' + textTypes[b].prefix + 'font_family_' + font.styleID + textTypes[b].selector);
+	}
+
+	fontStyles.push(fontTextStyles.join(',') + '{font-family: "' + font.name + '";}');
 }
 
 cssText = fontStyles.join(' ');
