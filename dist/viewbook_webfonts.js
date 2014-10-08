@@ -44,7 +44,7 @@ WebFontConfig = {
 
 
 // Generate V2 page style for the corresponding webfonts
-var fontStyles = [], fontTextStyles, cssText;
+var fontStyles = ['.wf-loading,.wf-loading #vb_title,.wf-loading #vb_menu{color: transparent !important;}'], fontTextStyles, cssText;
 var style = document.createElement('style');
 var head = document.head || document.getElementsByTagName('head')[0];
 var textTypes = [
