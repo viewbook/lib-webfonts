@@ -1,32 +1,68 @@
-// Webfont family listing
-var families = [
-	'Dosis:400,700:latin', 
-	'Lato:400,700,400italic,700italic:latin', 
-	'Arvo:400,700,400italic,700italic:latin', 
-	'PT+Serif:400,700,400italic,700italic:latin', 
-	'Roboto:400,700,400italic,700italic:latin', 
-	'Maven+Pro:400,700:latin', 
-	'Merriweather+Sans:400,700,700italic,400italic:latin', 
-	'Open+Sans:400italic,700italic,400,700:latin', 
-	'Vollkorn:400italic,700italic,400,700:latin', 
-	'Gentium+Book+Basic:400,700,400italic,700italic:latin', 
-	'Old+Standard+TT:400,700,400italic:latin'
+var fontData = [
+	{
+		font: 'Dosis:400,700:latin', 
+		name: 'font_family_dosis', 
+		family: 'Dosis'
+	},
+	{
+		font: 'Lato:400,700,400italic,700italic:latin', 
+		name:, 'font_family_lato', 
+		family: 'Lato'
+	},
+	{
+		font: 'Arvo:400,700,400italic,700italic:latin', 
+		name: 'font_family_arvo', 
+		family: 'Arvo'
+	},
+	{
+		font: 'PT+Serif:400,700,400italic,700italic:latin', 
+		name: 'font_family_pt-serif', 
+		family: 'PT Serif'
+	},
+	{
+		font: 'Roboto:400,700,400italic,700italic:latin', 
+		name: 'font_family_roboto', 
+		family: 'Roboto'
+	},
+	{
+		font: 'Maven+Pro:400,700:latin', 
+		name: 'font_family_maven-pro', 
+		family: 'Maven Pro'
+	},
+	{
+		font: 'Merriweather+Sans:400,700,700italic,400italic:latin', 
+		name: 'font_family_merriwea{class: ther-sans', 
+		family: 'Merriweather Sans'
+	},
+	{
+		font: 'Open+Sans:400italic,700italic,400,700:latin', 
+		name: 'font_family_open-sans', 
+		family: 'Open Sans'
+	},
+	{
+		font: 'Vollkorn:400italic,700italic,400,700:latin', 
+		name: 'font_family_vollkorn', 
+		family:  'Vollkorn'
+	},
+	{
+		font: 'Gentium+Book+Basic:400,700,400italic,700italic:latin', 
+		name: 'font_family_gentium-book-basic', 
+		family: 'Gentium Book Basic'
+	},
+	{
+		font: 'Old+Standard+TT:400,700,400italic:latin', 
+		name: 'font_family_old-standard-tt', 
+		family: 'Old Standard TT'
+	}
 ];
 
-var viewbookFonts = [], font, split, id, name, styleID;
 
-for(var a = 0; a < families.length; ++a){
-	font = families[a];
-	split = font.split(':');
-	id = split[0];
-	name = id.replace(/\+/g, ' ');
-	styleID = id.toLowerCase().replace(/\+/g, '-');
-
-	viewbookFonts.push({
-		name: name,
-		styleID: styleID
-	});
+// Generate the font families for google webfonts to use
+var families = [];
+for(var a = 0; a < fontData.length; ++a){
+	families.push(fontData[a].font);
 }
+
 
 // Default google webfont embed code (Javascript version)
 WebFontConfig = {
@@ -43,7 +79,7 @@ WebFontConfig = {
 })();
 
 
-// Generate V2 page style for the corresponding webfonts
+// Generate V2 webfont styles
 var fontStyles = [], fontTextStyles, cssText;
 var style = document.createElement('style');
 var head = document.head || document.getElementsByTagName('head')[0];
@@ -53,15 +89,15 @@ var textTypes = [
 	{prefix: 'menu_', selector: ' #vb_menu'}
 ];
 
-for(var a = 0; a < viewbookFonts.length; ++a){
-	font = viewbookFonts[a];
+for(var a = 0; a < fontClassNames.length; ++a){
+	fontClassName = fontClasses[a];
 	fontTextStyles = [];
 
 	for(var b = 0; b < textTypes.length; ++b){
-		fontTextStyles.push('.' + textTypes[b].prefix + 'font_family_' + font.styleID + textTypes[b].selector);
+		fontTextStyles.push('.' + textTypes[b].prefix + fontClassName + textTypes[b].selector);
 	}
 
-	fontStyles.push(fontTextStyles.join(',') + '{font-family: "' + font.name + '";}');
+	fontStyles.push(fontTextStyles.join(',') + '{font-family: "' + font.family + '";}');
 }
 
 cssText = fontStyles.join(' ');
