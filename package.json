@@ -1,0 +1,24 @@
+{
+  "name": "lib-webfonts",
+  "version": "0.0.0",
+  "description": "lib-webfonts ============",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/viewbook/lib-webfonts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viewbook/lib-webfonts/issues"
+  },
+  "homepage": "https://github.com/viewbook/lib-webfonts",
+  "devDependencies": {
+    "karma": "~0.12.24",
+    "karma-jasmine": "~0.2.2",
+    "karma-chrome-launcher": "~0.1.5"
+  }
+}
