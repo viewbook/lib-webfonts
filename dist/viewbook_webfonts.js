@@ -1,5 +1,10 @@
 (function (root) {
   function select_web_font (webfonts, set) {
+
+    var set = set.map(function (s) {
+      return s.substr(s.indexOf('font_family'));
+    });
+
     var style_names = webfonts.map(function (f) {
       return f.styleName;
     });
@@ -70,6 +75,7 @@
       }
 
       head.appendChild(style);
+
     }
   };
 })(this);

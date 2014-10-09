@@ -1,0 +1,46 @@
+.font_size_1, #vb_page.title_font_size_1 #vb_title h1, #vb_page.menu_font_size_1 #vb_menu, #vb_page.menu_font_size_1 .p_specs h5 {
+  font-size: 11px;
+	line-height:17px;
+}
+#vb_page.font_size_1 #vb_info_container h4 {font-size:13px;}
+
+.font_size_2, #vb_page.title_font_size_2 #vb_title h1, #vb_page.menu_font_size_2 #vb_menu, #vb_page.menu_font_size_2 .p_specs h5 {
+	font-size: 12px;
+	line-height:18px;
+}
+#vb_page.font_size_2 #vb_info_container h4 {font-size:14px;}
+
+.font_size_3, #vb_page.title_font_size_3 #vb_title h1, #vb_page.menu_font_size_3 #vb_menu, #vb_page.menu_font_size_3 .p_specs h5 {
+  font-size: 14px;
+	line-height:22px;
+}
+#vb_page.font_size_3 #vb_info_container h4 {font-size:16px;}
+
+.font_size_4, #vb_page.title_font_size_4 #vb_title h1, #vb_page.menu_font_size_4 #vb_menu, #vb_page.menu_font_size_4 .p_specs h5 {
+  font-size: 16px;
+	line-height:24px;
+}
+#vb_page.font_size_4 #vb_info_container h4 {font-size:18px;}
+
+.font_size_5, #vb_page.title_font_size_5 #vb_title h1, #vb_page.menu_font_size_5 #vb_menu, #vb_page.menu_font_size_5 .p_specs h5 {
+  font-size: 19px;                                                                                                                    
+	line-height:32px;
+}          
+#vb_page.font_size_5 #vb_info_container h4 {font-size:21px;}                                                                                                                             
+
+.font_size_6, #vb_page.title_font_size_6 #vb_title h1, #vb_page.menu_font_size_6 #vb_menu, #vb_page.menu_font_size_6 .p_specs h5 {
+  font-size: 24px;                                                                                                                    
+	line-height:38px;
+}  
+#vb_page.font_size_6 #vb_info_container h4 {font-size:26px;}                                                                                                                                     
+
+.font_size_7, #vb_page.title_font_size_7 #vb_title h1, #vb_page.menu_font_size_7 #vb_menu, #vb_page.menu_font_size_7 .p_specs h5 {
+  font-size: 30px;
+	line-height: 46px;
+}
+#vb_page.font_size_7 #vb_info_container h4 {font-size:34px;}    
+
+.font_size_8, #vb_page.title_font_size_8 #vb_title h1, #vb_page.menu_font_size_8 #vb_menu, #vb_page.menu_font_size_8 .p_specs h5 {
+  font-size: 36px;
+	line-height:58px;
+}
