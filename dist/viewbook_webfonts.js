@@ -9,6 +9,7 @@
     });
   }
 
+
   function font_style_to_spec (webfonts, selection) {
     return webfonts.reduce(function (acc, f) {
       if(selection.indexOf(f.styleName) != '-1')
@@ -59,7 +60,7 @@
       cssText = webfonts.map(function (wf) {
         return textTypes.map(function (tType) {
           return '.' + tType.prefix + wf.styleName + tType.selector;
-        }).join(",\n") + " {\n\t font-family: \"" + wf.family + "\";\n}";
+        }).join(",\n") + " {" + wf.styles + "}";
       }).join("\n");
 
       if (style.styleSheet){
@@ -73,19 +74,67 @@
   };
 })(this);
 
-// Populate this list for your fav webfonts from google
 var webFontData = [
-	{ font: 'Dosis:400,700:latin', styleName: 'font_family_dosis', family: 'Dosis'},
-	{ font: 'Lato:400,700,400italic,700italic:latin', styleName: 'font_family_lato', family: 'Lato'},
-	{ font: 'Arvo:400,700,400italic,700italic:latin', styleName: 'font_family_arvo', family: 'Arvo'},
-	{ font: 'PT+Serif:400,700,400italic,700italic:latin', styleName: 'font_family_pt-serif', family: 'PT Serif'},
-	{ font: 'Roboto:400,700,400italic,700italic:latin', styleName: 'font_family_roboto', family: 'Roboto'},
-	{ font: 'Maven+Pro:400,700:latin', styleName: 'font_family_maven-pro', family: 'Maven Pro'},
-	{ font: 'Merriweather+Sans:400,700,700italic,400italic:latin', styleName: 'font_family_merriwea', family: 'Merriweather Sans'},
-	{ font: 'Open+Sans:400italic,700italic,400,700:latin', styleName: 'font_family_open-sans', family: 'Open Sans'},
-	{ font: 'Vollkorn:400italic,700italic,400,700:latin', styleName: 'font_family_vollkorn', family:  'Vollkorn'},
-	{ font: 'Gentium+Book+Basic:400,700,400italic,700italic:latin', styleName: 'font_family_gentium-book-basic', family: 'Gentium Book Basic'},
-	{ font: 'Old+Standard+TT:400,700,400italic:latin', styleName: 'font_family_old-standard-tt', family: 'Old Standard TT'}
+	{
+		font: 'Source+Sans+Pro:400,700,400italic,700italic:latin', 
+		styleName: 'font_family_source-sans-pro', 
+		styles: "font-family: 'Source Sans Pro', sans-serif;",
+		name: 'Source Sans Pro'
+	},
+	{
+		font: 'Lato:400,700,400italic,700italic:latin', 
+		styleName: 'font_family_lato', 
+		styles: "font-family: 'Lato', sans-serif;",
+		name: 'Lato'
+	},
+	{
+		font: 'Arvo:400,700,400italic,700italic:latin', 
+		styleName: 'font_family_arvo', 
+		styles: "font-family: 'Arvo', serif;",
+		name: 'Arvo'
+	},
+	{
+		font: 'PT+Serif:400,700,400italic,700italic:latin', 
+		styleName: 'font_family_pt-serif', 
+		styles: "font-family: 'PT Serif', serif;",
+		name: 'PT Serif'
+	},
+	{
+		font: 'Roboto:700italic,300,700,300italic:latin', 
+		styleName: 'font_family_roboto', 
+		styles: "font-family: 'Roboto', sans-serif;",
+		name: 'Roboto'
+	},
+	{
+		font: 'Merriweather:300italic,300,700,700italic:latin', 
+		styleName: 'font_family_merriwea', 
+		styles: "font-family: 'Merriweather', serif;",
+		name: 'Merriweather'
+	},
+	{
+		font: 'Open+Sans:300italic,600italic,300,600:latin', 
+		styleName: 'font_family_open-sans', 
+		styles: "font-family: 'Open Sans', sans-serif;",
+		name: 'Open Sans'
+	},
+	{
+		font: 'Vollkorn:400italic,700italic,400,700:latin', 
+		styleName: 'font_family_vollkorn', 
+		styles:  "font-family: 'Vollkorn', serif;",
+		name: 'Vollkorn'
+	},
+	{
+		font: 'Gentium+Book+Basic:400,400italic,700,700italic:latin', 
+		styleName: 'font_family_gentium-book-basic', 
+		styles: "font-family: 'Gentium Book Basic', serif;",
+		name: 'Gentium Book Basic'
+	},
+	{
+		font: 'Old+Standard+TT:400,400italic,700:latin', 
+		styleName: 'font_family_old-standard-tt', 
+		styles: "font-family: 'Old Standard TT', serif;",
+		name: 'Old Standard TT'
+	}
 ];
 
 var fontStylesToLoad = false || fontStylesToLoad;
