@@ -5,59 +5,54 @@ var fontStylesToLoad = false || fontStylesToLoad;
 // Populate this list for your fav webfonts from google
 var fontData = [
 	{
-		font: 'Dosis:400,700:latin', 
-		styleName: 'font_family_dosis', 
-		family: 'Dosis'
+		font: 'Source+Sans+Pro:400,700,400italic,700italic:latin', 
+		styleName: 'font_family_source-sans-pro', 
+		family: "'Source Sans Pro', sans-serif"
 	},
 	{
 		font: 'Lato:400,700,400italic,700italic:latin', 
 		styleName: 'font_family_lato', 
-		family: 'Lato'
+		family: "'Lato', sans-serif"
 	},
 	{
 		font: 'Arvo:400,700,400italic,700italic:latin', 
 		styleName: 'font_family_arvo', 
-		family: 'Arvo'
+		family: "'Arvo', serif'"
 	},
 	{
 		font: 'PT+Serif:400,700,400italic,700italic:latin', 
 		styleName: 'font_family_pt-serif', 
-		family: 'PT Serif'
+		family: "'PT Serif', serif"
 	},
 	{
-		font: 'Roboto:400,700,400italic,700italic:latin', 
+		font: 'Roboto:700italic,300,700,300italic:latin', 
 		styleName: 'font_family_roboto', 
-		family: 'Roboto'
+		family: "'Roboto', sans-serif"
 	},
 	{
-		font: 'Maven+Pro:400,700:latin', 
-		styleName: 'font_family_maven-pro', 
-		family: 'Maven Pro'
-	},
-	{
-		font: 'Merriweather+Sans:400,700,700italic,400italic:latin', 
+		font: 'Merriweather:300italic,300,700,700italic:latin', 
 		styleName: 'font_family_merriwea', 
-		family: 'Merriweather Sans'
+		family: "'Merriweather', serif"
 	},
 	{
-		font: 'Open+Sans:400italic,700italic,400,700:latin', 
+		font: 'Open+Sans:300italic,600italic,300,600:latin', 
 		styleName: 'font_family_open-sans', 
-		family: 'Open Sans'
+		family: "'Open Sans', sans-serif"
 	},
 	{
 		font: 'Vollkorn:400italic,700italic,400,700:latin', 
 		styleName: 'font_family_vollkorn', 
-		family:  'Vollkorn'
+		family:  "'Vollkorn', serif"
 	},
 	{
-		font: 'Gentium+Book+Basic:400,700,400italic,700italic:latin', 
+		font: 'Gentium+Book+Basic:400,400italic,700,700italic:latin', 
 		styleName: 'font_family_gentium-book-basic', 
-		family: 'Gentium Book Basic'
+		family: "'Gentium Book Basic', serif"
 	},
 	{
-		font: 'Old+Standard+TT:400,700,400italic:latin', 
+		font: 'Old+Standard+TT:400,400italic,700:latin', 
 		styleName: 'font_family_old-standard-tt', 
-		family: 'Old Standard TT'
+		family: "'Old Standard TT', serif"
 	}
 ];
 
