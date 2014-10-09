@@ -7,52 +7,62 @@ var fontData = [
 	{
 		font: 'Source+Sans+Pro:400,700,400italic,700italic:latin', 
 		styleName: 'font_family_source-sans-pro', 
-		family: "'Source Sans Pro', sans-serif"
+		styles: "font-family: 'Source Sans Pro', sans-serif;",
+		name: 'Source Sans Pro'
 	},
 	{
 		font: 'Lato:400,700,400italic,700italic:latin', 
 		styleName: 'font_family_lato', 
-		family: "'Lato', sans-serif"
+		styles: "font-family: 'Lato', sans-serif;",
+		name: 'Lato'
 	},
 	{
 		font: 'Arvo:400,700,400italic,700italic:latin', 
 		styleName: 'font_family_arvo', 
-		family: "'Arvo', serif'"
+		styles: "font-family: 'Arvo', serif';",
+		name: 'Arvo'
 	},
 	{
 		font: 'PT+Serif:400,700,400italic,700italic:latin', 
 		styleName: 'font_family_pt-serif', 
-		family: "'PT Serif', serif"
+		styles: "font-family: 'PT Serif', serif;",
+		name: 'PT Serif'
 	},
 	{
 		font: 'Roboto:700italic,300,700,300italic:latin', 
 		styleName: 'font_family_roboto', 
-		family: "'Roboto', sans-serif"
+		styles: "font-family: 'Roboto', sans-serif;",
+		name: 'Roboto'
 	},
 	{
 		font: 'Merriweather:300italic,300,700,700italic:latin', 
 		styleName: 'font_family_merriwea', 
-		family: "'Merriweather', serif"
+		styles: "font-family: 'Merriweather', serif;",
+		name: 'Merriweather'
 	},
 	{
 		font: 'Open+Sans:300italic,600italic,300,600:latin', 
 		styleName: 'font_family_open-sans', 
-		family: "'Open Sans', sans-serif"
+		styles: "font-family: 'Open Sans', sans-serif;",
+		name: 'Open Sans'
 	},
 	{
 		font: 'Vollkorn:400italic,700italic,400,700:latin', 
 		styleName: 'font_family_vollkorn', 
-		family:  "'Vollkorn', serif"
+		styles:  "font-family: 'Vollkorn', serif;",
+		name: 'Vollkorn'
 	},
 	{
 		font: 'Gentium+Book+Basic:400,400italic,700,700italic:latin', 
 		styleName: 'font_family_gentium-book-basic', 
-		family: "'Gentium Book Basic', serif"
+		styles: "font-family: 'Gentium Book Basic', serif;",
+		name: 'Gentium Book Basic'
 	},
 	{
 		font: 'Old+Standard+TT:400,400italic,700:latin', 
 		styleName: 'font_family_old-standard-tt', 
-		family: "'Old Standard TT', serif"
+		styles: "font-family: 'Old Standard TT', serif;",
+		name: 'Old Standard TT'
 	}
 ];
 
@@ -114,7 +124,7 @@ if(families.length > 0){
 			fontTextStyles.push('.' + textTypes[b].prefix + font.styleName + textTypes[b].selector);
 		}
 
-		fontStyles.push(fontTextStyles.join(',') + '{font-family: "' + font.family + '";}');
+		fontStyles.push(fontTextStyles.join(',') + '{' + font.styles + '}');
 	}
 
 	cssText = fontStyles.join(' ');
