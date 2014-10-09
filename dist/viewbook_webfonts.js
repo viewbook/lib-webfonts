@@ -19,7 +19,7 @@ var fontData = [
 	{
 		font: 'Arvo:400,700,400italic,700italic:latin', 
 		styleName: 'font_family_arvo', 
-		styles: "font-family: 'Arvo', serif';",
+		styles: "font-family: 'Arvo', serif;",
 		name: 'Arvo'
 	},
 	{
