@@ -59,7 +59,7 @@
       cssText = webfonts.map(function (wf) {
         return textTypes.map(function (tType) {
           return '.' + tType.prefix + wf.styleName + tType.selector;
-        }).join(",\n") + " {\n\t\"font-family: \"" + wf.family + "\";\n}";
+        }).join(",\n") + " {\n\t font-family: \"" + wf.family + "\";\n}";
       }).join("\n");
 
       if (style.styleSheet){
